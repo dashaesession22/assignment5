@@ -1,0 +1,98 @@
+/* Set the background color */
+body {
+    background-color: #f0f0f0;
+  }
+  
+  /* Style the header */
+  header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  header h1 {
+    font-family: Arial, sans-serif;
+    font-size: 32px;
+    margin: 0;
+  }
+  
+  header p {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  /* Style the time blocks */
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 50px auto;
+    max-width: 900px;
+  }
+  
+  .time-block {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    width: calc((100% / 8) - 20px);
+  }
+  
+  .past {
+    background-color: #d3d3d3;
+  }
+  
+  .present {
+    background-color: #ff6961;
+  }
+  
+  .future {
+    background-color: #77dd77;
+  }
+  
+  .time-block h3 {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  .time-block input[type="text"] {
+    border: none;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    width: 100%;
+  }
+  
+  .time-block button {
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    margin-top: 10px;
+    padding: 10px;
+  }
+  
+  .time-block button:hover {
+    background-color: #555;
+  }
+  
+  /* Style the footer */
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  footer p {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    margin: 0;
+  }
+  

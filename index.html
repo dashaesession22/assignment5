@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Work Day Scheduler</title>
+    <!-- Link to your CSS file here -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.6/dayjs.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      /* Your CSS code here */
+      .past {
+        background-color: gray;
+      }
+      .present {
+        background-color: red;
+      }
+      .future {
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Work Day Scheduler</h1>
+      <p id="currentDay"></p>
+    </header>
+    <main>
+      <div class="container">
+        <!-- Create time blocks for standard business hours (9am to 5pm) -->
+        <div class="row">
+          <div class="col-md-2 hour">9am</div>
+          <div class="col-md-8 description"><textarea></textarea></div>
+          <div class="col-md-2 saveBtn"><i class="fas fa-save"></i></div>
+        </div>
+        <div class="row">
+          <div class="col-md-2 hour">10am</div>
+          <div class="col-md-8 description"><textarea></textarea></div>
+          <div class="col-md-2 saveBtn"><i class="fas fa-save"></i></div>
+        </div>
+        <!-- Repeat for the remaining time blocks -->
+        <div class="row">
+          <div class="col-md-2 hour">5pm</div>
+          <div class="col-md-8 description"><textarea></textarea></div>
+          <div class="col-md-2 saveBtn"><i class="fas fa-save"></i></div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; Your Company 2023</p>
+    </footer>
+    <script>
+      // Get the current date using Day.js
+      const currentDate = dayjs().format('dddd, MMMM D, YYYY');
+        
+      // Update the current date in the HTML
+      const currentDateElement = document.getElementById('currentDay');
+      currentDateElement.textContent = currentDate;
+        
+      // Color-code each time block to indicate whether it is in the past, present, or future
+      const currentHour = dayjs().hour();
+      $('.description').each(function() {
+        const hour = parseInt($(this).prev().text().replace('am', '').replace('pm', ''));
+        if (hour < currentHour) {
+          $(this).addClass('past')
